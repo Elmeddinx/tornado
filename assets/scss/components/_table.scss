@@ -1,0 +1,37 @@
+.table-container {
+    width: 100%;
+    padding: 32px 25px;
+    border-radius: 12px;
+    background: #fff;
+    margin-top: 32px;
+    overflow: hidden;
+    .table-container-inner {
+        width: 100%;
+        overflow-x: auto;
+        @include mq(tablet-landscape-up) {
+        }
+        .table {
+            width: 100%;
+            min-width: 650px;
+            margin-bottom: 0 !important;
+            .table-primary {
+                --bs-table-bg: #387ff8 !important;
+                th {
+                    color: #fff;
+                    font-family: "Poppins", sans-serif;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    border: 0.3px solid #fff;
+                    &:nth-child(1) {
+                        border-radius: 8px 0px 0px 0px;
+                    }
+                    &:nth-last-child(1) {
+                        border-radius: 0px 8px 0px 0px;
+                    }
+                }
+            }
+        }
+    }
+}

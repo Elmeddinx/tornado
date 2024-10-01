@@ -4,6 +4,7 @@
     display: flex;
     .page-body {
         width: 100%;
+        min-height: 100vh;
         padding: 42px 70px;
         @include mq(desktop-up) {
             padding: 42px 50px;
@@ -14,6 +15,8 @@
         @include mq(tablet-portrait-up) {
             padding: 42px 15px;
         }
+        .page-body-content {
+            width: 100%;
+        }
     }
-
 }

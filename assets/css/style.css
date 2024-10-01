@@ -385,6 +385,42 @@
   height: 100%;
 }
 
+.table-container {
+  width: 100%;
+  padding: 32px 25px;
+  border-radius: 12px;
+  background: #fff;
+  margin-top: 32px;
+  overflow: hidden;
+}
+.table-container .table-container-inner {
+  width: 100%;
+  overflow-x: auto;
+}
+.table-container .table-container-inner .table {
+  width: 100%;
+  min-width: 650px;
+  margin-bottom: 0 !important;
+}
+.table-container .table-container-inner .table .table-primary {
+  --bs-table-bg: #387ff8 !important;
+}
+.table-container .table-container-inner .table .table-primary th {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 0.3px solid #fff;
+}
+.table-container .table-container-inner .table .table-primary th:nth-child(1) {
+  border-radius: 8px 0px 0px 0px;
+}
+.table-container .table-container-inner .table .table-primary th:nth-last-child(1) {
+  border-radius: 0px 8px 0px 0px;
+}
+
 .login-page {
   width: 100%;
   height: 100vh;
@@ -488,6 +524,7 @@
 }
 .index-page .page-body {
   width: 100%;
+  min-height: 100vh;
   padding: 42px 70px;
 }
 @media only screen and (max-width: 1200px) {
@@ -504,4 +541,7 @@
   .index-page .page-body {
     padding: 42px 15px;
   }
+}
+.index-page .page-body .page-body-content {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
