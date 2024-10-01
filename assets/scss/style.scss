@@ -2,4 +2,7 @@
 @import "./abstracts/variables";
 @import "./base/reset";
 @import "./abstracts/mixins";
+@import "./components/sidebar";
+@import "./components/header";
 @import "./pages/login";
+@import "./pages/home";

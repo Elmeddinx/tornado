@@ -1,0 +1,19 @@
+.index-page {
+    width: 100%;
+    background-color: #f6f6f6;
+    display: flex;
+    .page-body {
+        width: 100%;
+        padding: 42px 70px;
+        @include mq(desktop-up) {
+            padding: 42px 50px;
+        }
+        @include mq(tablet-landscape-up) {
+            padding: 42px 30px;
+        }
+        @include mq(tablet-portrait-up) {
+            padding: 42px 15px;
+        }
+    }
+
+}
