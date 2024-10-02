@@ -1,12 +1,12 @@
 .page-header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     .search-bar {
-        width: 610px;
+        width: 100%;
         .search-bar-inner {
-            width: 100%;
+            width: 610px;
             .search-input {
                 display: flex;
                 width: 100%;
@@ -41,12 +41,12 @@
                     }
                 }
             }
-        }
-        @include mq(tablet-landscape-up) {
-            width: 400px;
-        }
-        @include mq(tablet-portrait-up) {
-            width: 80%;
+            @include mq(tablet-landscape-up) {
+                width: 400px;
+            }
+            @include mq(tablet-portrait-up) {
+                width: 80%;
+            }
         }
     }
     .lang-dropdown {

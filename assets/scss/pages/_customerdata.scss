@@ -1,0 +1,111 @@
+.page-title {
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.table-filter {
+    width: 100%;
+    margin-top: 9px;
+    .table-filter-container {
+        width: 100%;
+        border-radius: 12px;
+        background-color: #fff;
+        padding: 25px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .table-filter-inner {
+            max-width: 825px;
+            .table-filter-form {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 21px;
+            }
+        }
+    }
+    .bootstrap-select .dropdown-menu li a span.check-mark {
+        display: none;
+    }
+
+    /* Checkbox görünümünü ekle */
+    .bootstrap-select .dropdown-menu li a {
+        padding-left: 35px; /* Checkbox'lar için sol boşluk */
+        position: relative;
+        display: flex;
+    }
+    .dropdown-menu-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+        background-color: #f9f9f9;
+    }
+
+    .dropdown-menu-footer .btn-reset {
+        color: #007bff;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-menu-footer .btn-ok {
+        background-color: #007bff;
+        color: white;
+    }
+    .bootstrap-select .dropdown-menu li a span.check-mark {
+        display: none !important;
+    }
+    /* Checkbox stilini ekle */
+    .bootstrap-select .dropdown-menu li a::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: #fff;
+    }
+
+    /* Checkbox işaretlendiğinde stilini ekle */
+    .bootstrap-select .dropdown-menu li a.selected::before {
+        content: "✓";
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        line-height: 16px;
+        background-color: #387ff8;
+    }
+    .bootstrap-select .inner.show {
+        max-height: 155px !important;
+        scrollbar-width: thin; 
+        scrollbar-color: #387FF8 #f1f1f1;
+    }
+    
+    .bootstrap-select .inner.show::-webkit-scrollbar {
+        width: 3px;
+    }
+    
+    .bootstrap-select .inner.show::-webkit-scrollbar-track {
+        background: #387FF8;
+    }
+    
+    .bootstrap-select .inner.show::-webkit-scrollbar-thumb {
+        background: #387FF8;
+        border-radius: 10px;
+        border: 2px solid #f1f1f1;
+    }
+    
+    .bootstrap-select .inner.show::-webkit-scrollbar-thumb:hover {
+        background: #387FF8;
+    }
+    .hidden-footer {
+        display: none;
+    }
+}
