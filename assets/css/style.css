@@ -286,12 +286,14 @@
 }
 
 #content {
+  width: calc(100% - 250px);
   margin-left: 250px; /* Content margin when sidebar is open */
   transition: all 0.3s;
 }
 
 #sidebar.collapsed ~ #content {
-  margin-left: 80px; /* Content margin when sidebar is collapsed */
+  width: calc(100% - 72px);
+  margin-left: 72px; /* Content margin when sidebar is collapsed */
 }
 
 .page-header {
@@ -399,7 +401,7 @@
 }
 .table-container .table-container-inner .table {
   width: 100%;
-  min-width: 650px;
+  min-width: 892px;
   margin-bottom: 0 !important;
 }
 .table-container .table-container-inner .table .table-primary {
