@@ -8,7 +8,17 @@
     .table-container-inner {
         width: 100%;
         overflow-x: auto;
-        @include mq(tablet-landscape-up) {
+        &::-webkit-scrollbar-track {
+            border-radius: 99px;
+            background: #ececec;
+        }
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 99px;
+            background: #387ff8;
         }
         .table {
             width: 100%;
@@ -29,6 +39,13 @@
                     }
                     &:nth-last-child(1) {
                         border-radius: 0px 8px 0px 0px;
+                    }
+                }
+            }
+            tr {
+                td {
+                    img {
+                        cursor: pointer;
                     }
                 }
             }

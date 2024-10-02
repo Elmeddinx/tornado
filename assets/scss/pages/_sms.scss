@@ -1,0 +1,55 @@
+.sms-container {
+    width: 100%;
+    padding: 32px 25px;
+    border-radius: 12px;
+    margin-top: 32px;
+    .title {
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .sms-container-inner {
+        background-color: #fff;
+        max-width: 576px;
+        width: 576px;
+        border-radius: 12px;
+        padding: 22px 40px;
+        @include mq(tablet-portrait-up) {
+            width: auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 32px;
+            label {
+                color: rgba(0, 0, 0, 0.87);
+                font-family: "Poppins", sans-serif;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+            input,
+            select,
+            textarea {
+                height: 52px;
+                border-radius: 8px;
+                border: 1px solid #777;
+            }
+            textarea {
+                height: 116px;
+            }
+            .position-relative {
+                i {
+                    font-size: 18px;
+                    right: 10px;
+                    top: 67%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}

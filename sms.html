@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Tornado - Home</title>
 </head>
@@ -20,9 +21,13 @@
                         <a href="./index.html" class="logo-md">
                             <img src="./assets/img/logo.svg" alt="">
                         </a>
+                        
                         <a href="./index.html" class="logo-sm">
                             <img src="./assets/img/logo-mini.svg" alt="">
                         </a>
+                        <div class="sidebar-close">
+                            <i class="bi bi-x"></i>
+                        </div>
                     </div>
 
                     <div class="sidebar-content">
@@ -117,19 +122,10 @@
         </div>
         <div id="content" class="page-body">
             <div class="page-header">
-                <div class="search-bar">
-                    <div class="search-bar-inner">
-                        <form class="d-flex search-input">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none">
-                                <path
-                                    d="M21 21L16.657 16.657M16.657 16.657C17.3998 15.9141 17.9891 15.0321 18.3912 14.0615C18.7932 13.0909 19.0002 12.0506 19.0002 11C19.0002 9.94936 18.7932 8.90905 18.3912 7.93842C17.9891 6.96779 17.3998 6.08585 16.657 5.34296C15.9141 4.60007 15.0321 4.01078 14.0615 3.60874C13.0909 3.20669 12.0506 2.99976 11 2.99976C9.94936 2.99976 8.90905 3.20669 7.93842 3.60874C6.96779 4.01078 6.08585 4.60007 5.34296 5.34296C3.84263 6.84329 2.99976 8.87818 2.99976 11C2.99976 13.1217 3.84263 15.1566 5.34296 16.657C6.84329 18.1573 8.87818 19.0002 11 19.0002C13.1217 19.0002 15.1566 18.1573 16.657 16.657Z"
-                                    stroke="#979797" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        </form>
-                    </div>
+                <div class="hamburger-menu">
+                    <i class="bi bi-list"></i>
                 </div>
+
                 <div class="lang-dropdown">
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" id="languageDropdown"
@@ -161,64 +157,42 @@
                 </div>
             </div>
             <div class="page-body-content">
-                <div class="table-container">
-                    <div class="table-container-inner">
-                        <table class="table table-bordered">
-                            <thead class="table-primary text-center">
-                                <tr>
-                                    <th scope="col">Məhsul siyahısı</th>
-                                    <th scope="col">Məhsul sayı</th>
-                                    <th scope="col">Məhsulun alış qiyməti</th>
-                                    <th scope="col">Məhsulun satiş qiyməti</th>
-                                    <th scope="col">Məhsulun limit sayı</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                <tr>
-                                    <td>1</td>
-                                    <td>323434</td>
-                                    <td>12 azn</td>
-                                    <td>23 azn</td>
-                                    <td>345</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>323434</td>
-                                    <td>12 azn</td>
-                                    <td>23 azn</td>
-                                    <td>345</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>323434</td>
-                                    <td>12 azn</td>
-                                    <td>23 azn</td>
-                                    <td>345</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>323434</td>
-                                    <td>12 azn</td>
-                                    <td>23 azn</td>
-                                    <td>345</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>323434</td>
-                                    <td>12 azn</td>
-                                    <td>23 azn</td>
-                                    <td>345</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>323434</td>
-                                    <td>12 azn</td>
-                                    <td>23 azn</td>
-                                    <td>345</td>
-                                </tr>
-                                <!-- Daha fazla satır ekleyebilirsiniz -->
-                            </tbody>
-                        </table>
+                <div class="sms-container  bg-primary d-flex flex-column">
+                    <div class="sms-header me-auto ms-auto">
+                        <h2 class="title">Sms/Email göndər</h2>
+                    </div>
+                    <div class="sms-container-inner me-auto ms-auto">
+                        <form>
+                            <!-- Ad -->
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Ad</label>
+                                <input type="text" class="form-control" id="name" placeholder="Text">
+                            </div>
+                            <!-- Mail -->
+                            <div class="mb-3 position-relative">
+                                <label for="email" class="form-label">Mail</label>
+                                <input type="email" class="form-control" id="email" placeholder="Text">
+                                <i class="bi bi-envelope position-absolute"></i>
+                            </div>
+                            <!-- İstekler -->
+                            <div class="mb-3">
+                                <label for="request" class="form-label">İstəkləriniz və əlavə qeydlərinizi burada
+                                    yazın.</label>
+                                <select class="form-select">
+                                    <option>Lorem Ipsum is simply dummy text of the printing</option>
+                                </select>
+                            </div>
+                            <!-- Mesaj -->
+                            <div class="mb-3">
+                                <textarea class="form-control form-textarea" placeholder="Text"></textarea>
+                            </div>
+                            <!-- Submit Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary ms-auto pe-4 ps-4">
+                                    Mesajı göndər <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,10 @@
     align-items: center;
     .search-bar {
         width: 100%;
+
+        @include mq(tablet-portrait-up) {
+            display: none;
+        }
         .search-bar-inner {
             width: 610px;
             .search-input {

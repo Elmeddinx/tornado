@@ -1,10 +1,22 @@
 const sidebar = document.getElementById("sidebar");
 const toggleBtn = document.querySelector(".toggle-btn");
+const hamburgerBtn = document.querySelector(".hamburger-menu");
+const sidebarCLose = document.querySelector(".sidebar-close");
 
 toggleBtn.addEventListener("click", () => {
   sidebar.classList.toggle("collapsed");
 });
-
+hamburgerBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+sidebarCLose.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+});
+document.addEventListener("click", (event) => {
+  if (!sidebar.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+    sidebar.classList.remove("active");
+  }
+});
 document.addEventListener("DOMContentLoaded", function () {
   const languageDropdown = document.getElementById("languageDropdown");
   const dropdownMenu = document.getElementById("dropdownMenu");
@@ -15,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ru: { name: "RU", flag: "./assets/icons/ru.svg" },
   };
 
-  // Olay delegasyonu: tüm dropdown öğelerine dinleyici ekle
   if (dropdownMenu) {
     dropdownMenu.addEventListener("click", function (e) {
       if (e.target.closest(".dropdown-item")) {
@@ -25,10 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
           .getAttribute("data-lang");
         const selectedLanguage = languages[selectedLang];
 
-        // Güncelleme: Seçilen dili dropdown butonuna aktar
         languageDropdown.innerHTML = `<img src="${selectedLanguage.flag}" alt="${selectedLanguage.name}" class="flag-icon"> ${selectedLanguage.name}`;
 
-        // Diğer dillerin dropdown menüde görünmesi için içeriği güncelle
         const updatedDropdownMenu = Object.keys(languages)
           .filter((lang) => lang !== selectedLang)
           .map((lang) => {
@@ -47,18 +56,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+if (typeof jQuery !== 'undefined') {
+  (function ($) {
+    $(document).ready(function () {
+      $(".selectpicker").selectpicker();
+      $(".selectpicker").on("shown.bs.select", function () {
+        var footerElement = $(this).closest(".select-with-footer").find(".hidden-footer .dropdown-menu-footer");
 
-$(document).ready(function () {
-  $(".selectpicker").selectpicker();
-  $(".selectpicker").on("shown.bs.select", function () {
-    var footerElement = $(this).closest(".select-with-footer").find(".hidden-footer .dropdown-menu-footer");
+        var dropdownMenu = $(this).parent().find(".dropdown-menu");
+        if (footerElement.length && !dropdownMenu.find(".dropdown-menu-footer").length) {
+          dropdownMenu.append(footerElement.clone().show());
+        }
+      });
 
-    // Dropdown menüsünü bul
-    var dropdownMenu = $(this).parent().find(".dropdown-menu");
-    // Eğer footer varsa ve dropdown menüsüne daha önce eklenmemişse
-    if (footerElement.length && !dropdownMenu.find(".dropdown-menu-footer").length) {
-        dropdownMenu.append(footerElement.clone().show());
+    });
+  })(jQuery);
+}
+if (document.getElementById('toggleOldPassword')) {
+  document.getElementById('toggleOldPassword').addEventListener('click', function () {
+    const passwordInput = document.getElementById('oldPassword');
+    const icon = this;
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      icon.classList.remove('bi-eye-slash');
+      icon.classList.add('bi-eye');
+    } else {
+      passwordInput.type = 'password';
+      icon.classList.remove('bi-eye');
+      icon.classList.add('bi-eye-slash');
     }
-});
+  });
 
-});
+  // İkinci input için
+  document.getElementById('toggleNewPassword').addEventListener('click', function () {
+    const passwordInput = document.getElementById('newPassword');
+    const icon = this;
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      icon.classList.remove('bi-eye-slash');
+      icon.classList.add('bi-eye');
+    } else {
+      passwordInput.type = 'password';
+      icon.classList.remove('bi-eye');
+      icon.classList.add('bi-eye-slash');
+    }
+  });
+}
