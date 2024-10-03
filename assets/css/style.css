@@ -588,6 +588,138 @@
   border: 0;
 }
 
+.bootstrap-select .dropdown-menu li a span.check-mark {
+  display: none;
+}
+
+.dropdown-menu-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+.dropdown-menu-footer .btn-reset {
+  color: #007bff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-menu-footer .btn-ok {
+  background-color: #007bff;
+  color: white;
+}
+
+.bootstrap-select .dropdown-menu li a {
+  padding-left: 35px;
+  position: relative;
+  display: flex;
+}
+.bootstrap-select .dropdown-menu li a span.check-mark {
+  display: none !important;
+}
+.bootstrap-select .dropdown-menu li a::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.bootstrap-select .dropdown-menu li a.selected::before {
+  content: "✓";
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 16px;
+  background-color: #387ff8;
+}
+.bootstrap-select .inner.show {
+  max-height: 155px !important;
+}
+.bootstrap-select .inner.show::-webkit-scrollbar-track {
+  border-radius: 99px;
+  background: #ececec;
+}
+.bootstrap-select .inner.show::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.bootstrap-select .inner.show::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background: #387ff8;
+}
+
+.hidden-footer {
+  display: none;
+}
+
+.sms-header-dropdown-1,
+.sms-header-dropdown-2 {
+  position: relative;
+}
+.sms-header-dropdown-1.bootstrap-select .dropdown-toggle:focus,
+.sms-header-dropdown-2.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+.sms-header-dropdown-1::before,
+.sms-header-dropdown-2::before {
+  content: "\f282";
+  font-family: bootstrap-icons !important;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-weight: 700;
+  font-style: normal;
+  display: inline-block;
+  text-rendering: auto;
+  pointer-events: none;
+  font-size: 16px;
+}
+.sms-header-dropdown-1 button,
+.sms-header-dropdown-2 button {
+  background-color: transparent;
+  border: none;
+}
+.sms-header-dropdown-1 button .filter-option-inner-inner,
+.sms-header-dropdown-2 button .filter-option-inner-inner {
+  color: #fff;
+  text-align: right;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 380px) {
+  .sms-header-dropdown-1 button .filter-option-inner-inner,
+  .sms-header-dropdown-2 button .filter-option-inner-inner {
+    font-size: 16px;
+  }
+}
+.sms-header-dropdown-1 button::after,
+.sms-header-dropdown-2 button::after {
+  display: none;
+}
+.sms-header-dropdown-1 button:hover,
+.sms-header-dropdown-2 button:hover {
+  background-color: transparent;
+}
+.sms-header-dropdown-1 button:focus, .sms-header-dropdown-1 button.show,
+.sms-header-dropdown-2 button:focus,
+.sms-header-dropdown-2 button.show {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
 .login-page {
   width: 100%;
   height: 100vh;
@@ -764,78 +896,17 @@
     width: 100%;
   }
 }
-.table-filter .bootstrap-select .dropdown-menu li a span.check-mark {
-  display: none;
-}
-.table-filter .dropdown-menu-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  border-top: 1px solid #ddd;
-  background-color: #f9f9f9;
-}
-.table-filter .dropdown-menu-footer .btn-reset {
-  color: #007bff;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.table-filter .dropdown-menu-footer .btn-ok {
-  background-color: #007bff;
-  color: white;
-}
-.table-filter .bootstrap-select .dropdown-menu li a {
-  padding-left: 35px;
-  position: relative;
-  display: flex;
-}
-.table-filter .bootstrap-select .dropdown-menu li a span.check-mark {
-  display: none !important;
-}
-.table-filter .bootstrap-select .dropdown-menu li a::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  background-color: #fff;
-}
-.table-filter .bootstrap-select .dropdown-menu li a.selected::before {
-  content: "✓";
-  font-size: 12px;
-  color: #fff;
-  text-align: center;
-  line-height: 16px;
-  background-color: #387ff8;
-}
-.table-filter .bootstrap-select .inner.show {
-  max-height: 155px !important;
-}
-.table-filter .bootstrap-select .inner.show::-webkit-scrollbar-track {
-  border-radius: 99px;
-  background: #ececec;
-}
-.table-filter .bootstrap-select .inner.show::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-}
-.table-filter .bootstrap-select .inner.show::-webkit-scrollbar-thumb {
-  border-radius: 9px;
-  background: #387ff8;
-}
-.table-filter .hidden-footer {
-  display: none;
-}
 
 .sms-container {
   width: 100%;
   padding: 32px 25px;
   border-radius: 12px;
   margin-top: 32px;
+}
+@media only screen and (max-width: 380px) {
+  .sms-container {
+    padding: 32px 20px;
+  }
 }
 .sms-container .title {
   color: #fff;
@@ -845,14 +916,48 @@
   font-weight: 500;
   line-height: normal;
 }
+@media only screen and (max-width: 768px) {
+  .sms-container .title {
+    text-align: center;
+  }
+}
+.sms-container .sms-header {
+  max-width: 656px;
+  width: 656px;
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 1200px) {
+  .sms-container .sms-header {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sms-container .sms-header {
+    flex-direction: column;
+  }
+}
+.sms-container .sms-header .sms-header-dropdown-group {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .sms-container .sms-header .sms-header-dropdown-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.sms-container .sms-header .sms-header-dropdown-group .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: auto;
+}
 .sms-container .sms-container-inner {
   background-color: #fff;
-  max-width: 576px;
-  width: 576px;
+  max-width: 656px;
+  width: 656px;
   border-radius: 12px;
   padding: 22px 40px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   .sms-container .sms-container-inner {
     width: auto;
   }

@@ -3,6 +3,10 @@
     padding: 32px 25px;
     border-radius: 12px;
     margin-top: 32px;
+
+    @include mq(phone-sm) {
+        padding: 32px 20px;
+    }
     .title {
         color: #fff;
         font-family: "Poppins", sans-serif;
@@ -10,14 +14,43 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+
+        @include mq(tablet-portrait-up) {
+            text-align: center;
+        }
+    }
+    .sms-header {
+        max-width: 656px;
+        width: 656px;
+        display: flex;
+        justify-content: space-between;
+
+        @include mq(desktop-up) {
+            width: auto;
+        }
+        @include mq(tablet-portrait-up) {
+            flex-direction: column;
+        }
+        .sms-header-dropdown-group {
+            display: flex;
+            align-items: center;
+
+            @include mq(tablet-portrait-up) {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+                width: auto;
+            }
+        }
     }
     .sms-container-inner {
         background-color: #fff;
-        max-width: 576px;
-        width: 576px;
+        max-width: 656px;
+        width: 656px;
         border-radius: 12px;
         padding: 22px 40px;
-        @include mq(tablet-portrait-up) {
+        @include mq(desktop-up) {
             width: auto;
         }
         form {
