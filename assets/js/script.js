@@ -112,49 +112,37 @@ if (document.getElementById("toggleOldPassword")) {
 
 document.querySelectorAll('.table-row').forEach(row => {
   row.addEventListener('click', function (e) {
-      // Tıklanan satırın içindeki dropdown menüyü al
       const dropdownMenu = row.querySelector('.dropdown-menu-custom');
 
-      // Eğer menü mevcut değilse, işlemi sonlandır
       if (!dropdownMenu) return;
 
-      // Eğer menü zaten açık ise, kapat ve işlemi sonlandır
       if (dropdownMenu.classList.contains('show')) {
           dropdownMenu.classList.remove('show');
           return;
       }
 
-      // Diğer açık olan dropdownları kapat
       document.querySelectorAll('.dropdown-menu-custom').forEach(menu => {
           menu.classList.remove('show');
       });
 
-      // Tıklanan menüyü aç (show sınıfını ekle)
       dropdownMenu.classList.add('show');
 
-      // Menünün boyutlarını ve satırın konumunu al
       const rect = row.getBoundingClientRect();
       const dropdownHeight = dropdownMenu.offsetHeight;
       const windowHeight = window.innerHeight;
 
-      // Menünün açılacağı konumu belirle
       if (rect.bottom + dropdownHeight > windowHeight) {
-          // Eğer menü açıldığında sayfanın altına taşacaksa, menüyü satırın üstüne yerleştir
           dropdownMenu.style.top = `${rect.top + window.scrollY - dropdownHeight}px`;
       } else {
-          // Menü normalde olduğu gibi satırın altına yerleşir
           dropdownMenu.style.top = `${rect.bottom + window.scrollY}px`;
       }
 
-      // Menüyü sol tarafa yerleştir
       dropdownMenu.style.left = `${rect.left + window.scrollX}px`;
 
-      // Diğer olayların tetiklenmesini engelle
       e.stopPropagation();
   });
 });
 
-// Sayfa tıklaması durumunda menüyü gizle
 document.addEventListener('click', function () {
   document.querySelectorAll('.dropdown-menu-custom').forEach(menu => {
       menu.classList.remove('show');
