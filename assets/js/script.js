@@ -132,9 +132,21 @@ document.querySelectorAll('.table-row').forEach(row => {
       // Tıklanan menüyü aç (show sınıfını ekle)
       dropdownMenu.classList.add('show');
 
-      // Menüyü satırın sol alt köşesine yerleştir
+      // Menünün boyutlarını ve satırın konumunu al
       const rect = row.getBoundingClientRect();
-      dropdownMenu.style.top = `${rect.bottom + window.scrollY}px`;
+      const dropdownHeight = dropdownMenu.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      // Menünün açılacağı konumu belirle
+      if (rect.bottom + dropdownHeight > windowHeight) {
+          // Eğer menü açıldığında sayfanın altına taşacaksa, menüyü satırın üstüne yerleştir
+          dropdownMenu.style.top = `${rect.top + window.scrollY - dropdownHeight}px`;
+      } else {
+          // Menü normalde olduğu gibi satırın altına yerleşir
+          dropdownMenu.style.top = `${rect.bottom + window.scrollY}px`;
+      }
+
+      // Menüyü sol tarafa yerleştir
       dropdownMenu.style.left = `${rect.left + window.scrollX}px`;
 
       // Diğer olayların tetiklenmesini engelle
@@ -148,4 +160,5 @@ document.addEventListener('click', function () {
       menu.classList.remove('show');
   });
 });
+
 
